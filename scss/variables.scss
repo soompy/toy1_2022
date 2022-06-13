@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+// important
+$imt : unquote('!important');
+
+// item length
+$itemLength : 100;
+
+/********** color variable **********/
+$color-primary: #FFE500 !default;
+$color-red: #E65F3E !default;
+$color-white: #fff !default;
+$color-grey: #535D67 !default;
+$color-green: #05AA33 !default;
+$color-black: #000000 !default;
+
+$color-gradient1:linear-gradient(to bottom, #f8f8f8, #d3d3d3) !default;
+$color-gradient2:linear-gradient(to bottom, #fdabb4, #fa7f7f) !default;
+$color-gradient3:linear-gradient(to bottom, #dbffd5, #92d687) !default;
+$colors: () !default;
+
+$colors: () !default;
+$colors: map-merge(
+    (      
+      "primary": $color-primary,
+      "red": $color-red,   
+      "white": $color-white,
+      "grey": $color-grey,
+      "green": $color-green,
+      "black": $color-black
+    ),
+    $colors
+);
