@@ -136,7 +136,7 @@ dfn {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
 }
 
 h2,
@@ -148,6 +148,11 @@ p {
   margin: 0;
 }
 
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+}
 /**
    * Address styling not present in IE 8/9.
    */

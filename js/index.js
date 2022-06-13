@@ -1,3 +1,11 @@
+// dark white Theme
+const themeSwitch = document.querySelector('.themeSwitch input');
+
+themeSwitch.addEventListener('change', () => {
+  document.body.classList.toggle('darkTheme');
+});
+
+// Top 버튼
 w = 1366, h = 768;
 var renderer = new PIXI.autoDetectRenderer(w, h);
 var cOutput = document.getElementById('wrap');
