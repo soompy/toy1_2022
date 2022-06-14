@@ -1,8 +1,9 @@
 @import url("http://fonts.cdnfonts.com/css/montserrat");
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 @import url(../css/reset.css);
 @import url(../css/icon.css);
 
-:root { 
+:root {
   --navHeight: 70px;
   --sage: #d2cca1;
   --paleSpringBud: #dedaba;
@@ -35,6 +36,7 @@
 }
 
 body {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
   background: #ffffff;
   color: #1a1a1a;
   &.darkTheme {
@@ -63,6 +65,10 @@ body {
   }
 }
 
+img {
+  display: block;
+  width: 100%;
+}
 
 #header {
   display: flex;
