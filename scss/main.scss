@@ -1,4 +1,10 @@
 @import url('http://fonts.cdnfonts.com/css/montserrat');
+@layer reset, common, main;
+
+
+:root {
+    accent-color: rgb(255, 255, 128);
+}
 
 .visual {
     position: relative;
@@ -114,6 +120,29 @@
     }
 }
 
+.pin {
+	position: fixed;
+	bottom: 60px;
+	right: 60px;
+	width: 60px;
+    height: 60px;
+    border-radius: 50%;
+	box-sizing: border-box;
+	padding: 10px;
+	background: white;
+	box-shadow: 0 1px 5px -2px rgba(black,0.5);
+	transition: transform 100ms linear;
+	p {
+		font-size: 16px;
+		line-height: 1.25; 
+		font-weight: 600;
+		color: black;
+		position: relative;
+		top: 50%;
+		transform: translatey(-50%);
+	}
+}
+
 @keyframes flick {
     0%, 100% {
       background-image: radial-gradient(
@@ -128,3 +157,12 @@
       transparent 68%);
     }
   }
+
+
+// ios mac
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) {
+    .imgBox {
+        flex: 2;
+    }
+}}
