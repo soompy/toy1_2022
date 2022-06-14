@@ -24,7 +24,7 @@
   --fontColor: var(--black);
 }
 
-.dark-theme {
+.darkTheme {
   --themeDropDownBg: var(--msuGreen);
   --themeIconBorderColor: var(--richBlackForeground);
   --themeSwitchColor: var(--msuGreen);
@@ -40,6 +40,7 @@ body {
   &.darkTheme {
     background: #1a1a1a;
     color: #ffffff;
+    transition: all 0.5s ease-in-out;
     a {
       color: #ffffff;
     }
@@ -54,8 +55,15 @@ body {
         }
       }
     }
+    .themeSwitch {
+      div {
+        background: #eee;
+      }
+    }
   }
 }
+
+
 #header {
   display: flex;
   align-items: center;
@@ -74,6 +82,7 @@ body {
 
   .logo {
     a {
+      display: none;
       svg {
         path {
           fill: #1a1a1a;

@@ -5,59 +5,52 @@ themeSwitch.addEventListener('change', () => {
   document.body.classList.toggle('darkTheme');
 });
 
-// Top 버튼
-w = 1366, h = 768;
-var renderer = new PIXI.autoDetectRenderer(w, h);
-var cOutput = document.getElementById('wrap');
-cOutput.appendChild(renderer.view);
 
-var stage = new PIXI.Container();
-var container = new PIXI.Container();
-var foreground = new PIXI.Container();
-stage.addChild(container);
-stage.addChild(foreground); 
+// text rolling
+let roller = document.querySelector('.roller');
+roller.id = 'roller1';
 
-var f;
-var fg;
-var mousex = w/2, mousey = h/2;
-var ploader = new PIXI.loaders.Loader();
+let clone = roller.cloneNode(true);
+clone.id = 'roller2';
+document.querySelector('.text-wrap').appendChild(clone);
 
-function init(){
-  console.log('dasdsdasd');
-  ploader.add('fg', 'http://i.imgur.com/Z4jQ9T1.jpg');
-  ploader.add('depth', 'http://i.imgur.com/xWVSCdA.jpg');
+document.querySelector('#roller1').style.left = '0px';
+document.querySelector('#roller2').style.left = document.querySelector('.roller ul').offsetWidth+'px';
 
-  ploader.once('complete', startMagic);
-  // Begin loading -
-  ploader.load();
+roller.classList.add('original');
+clone.classList.add('clone');
+
+
+// text rolling 2
+var slide1 = "";
+slide1 += "<p class='slide-box'>space hub</p>";
+slide1 += "<p class='slide-box'>world space</p>";
+
+for(var k=0; k < 120; k++){
+    $('.band-box-1').append(slide1);
 }
 
-function startMagic() {
-  fg = new PIXI.Sprite(ploader.resources.fg.texture);
+var slide2 = "";
+slide2 += "<p class='slide-box'>text</p>";
+slide2 += "<p class='slide-box'>text</p>";
 
-  foreground.addChild(fg);
-  
-  d = new PIXI.Sprite(ploader.resources.depth.texture);
-    f = new PIXI.filters.DisplacementFilter(d, 0);
-    fg.filters = [f];  
-    window.onmousemove = function(e) {
-      mousex = e.clientX;
-      mousey = e.clientY;
-    };
-  animate();
+for(var k=0; k < 120; k++){
+    $('.band-box-2').append(slide2);
+}
+
+var slide3 = "";
+slide3 += "<p class='slide-box'>text</p>";
+
+for(var k=0; k < 60; k++){
+    $('.band-box-3').append(slide3);
+}
+
+var slide4 = "";
+slide4 += "<p class='slide-box'>text</p>";
+slide4 += "<p class='slide-box'>text</p>";
+
+for(var k=0; k < 120; k++){
+    $('.band-box-4').append(slide4);
 }
 
 
-function animate() {
-console.log('aaaaaaaaaa');
-  f.scale.x = (window.innerWidth/2 - mousex) / 75;
-  f.scale.y = (window.innerHeight/2 - mousey) / 75;
-  fg.addChild(d);
-  d.renderable=false;
-   
-  renderer.render(stage);       
-  requestAnimationFrame(animate);
-}
-
-// Start -
-init();
