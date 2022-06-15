@@ -91,7 +91,8 @@
             </div>
         </section>
 
-        <section class="section area-common" style="display: flex;flex-direction: column;">
+        
+        <section class="section area-common">
             <div
                 data-aos="fade-up"
                 data-aos-offset="200"
@@ -103,22 +104,29 @@
                 data-aos-anchor-placement="top-center"
                 style="height: 50vh;"
             >scroll aos</div>
-            
-            
         </section>
 
-        <section class="section area-common">
-            <!-- <div class="neon-wrap">
+        <section class="section area-common neon">
+            <div class="neon-wrap">
                 <div class="title-neon">
                     <div class="blue-neon">
                         <div class="red-neon">open</div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </section>
 
-        <section class="section area-common">
-            <div class="rolling-bg-wrap">
+        <section class="section area-common text-roll-area">
+            
+            <span class="image-wrapper ai-lottie">
+                <lottie-player src="https://assets7.lottiefiles.com/private_files/lf30_cmd8kh2q.json" mode="bounce" background="transparent"  speed="1.5"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+            </span>
+            
+            <div class="band-wrap">
+                <div class="band-box band-box-1"></div>
+            </div>
+
+            <!-- <div class="rolling-bg-wrap">
                 <div class="text-wrap">
                     <div class="roller">
                         <ul>
@@ -132,9 +140,9 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="band-wrap">
+            <!-- <div class="band-wrap">
                 <div class="band-box band-box-1"></div>
             </div>
             <div class="band-wrap">
@@ -145,12 +153,18 @@
             </div>
             <div class="band-wrap">
                 <div class="band-box band-box-4"></div>
+            </div> -->
+        </section>
+
+        <section class="section area-common tech-area">
+            <lottie-player id="firstLottie" class="stack-obj" src="https://assets8.lottiefiles.com/packages/lf20_fttljtfs.json" style="width:400px; height: 400px;">"></lottie-player>
+            <div class="stroke-text-box">
+                스트로크 텍스트 abc
             </div>
         </section>
 
-        <section class="section area-common">
-            <!-- 계산기 -->
-            <!--  -->
+        <section id="" class="section area-common sticky-bg">
+            <div class="spriteImg-box"></div>
         </section>
 
         <section class="section area-common">
@@ -254,6 +268,9 @@
                 </div>
             </div>
         </section>
+
+        <div class="floating-object"></div>
+        
     </main>
 
 
@@ -262,20 +279,32 @@
     </footer>
 
     
-    <div class="pin">	
-        <p>top</p>
-    </div>
     
     <!-- gsap pixi js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/picasso.js" crossorigin></script>
-    <script src="https://pixijs.download/release/pixi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://pixijs.download/release/pixi.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/PixiPlugin.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
     <script src="./js/visual.js"></script>
     <script>
         AOS.init();
+
+        LottieInteractivity.create({
+            mode:"scroll",
+            player:'#firstLottie',
+            actions: [
+                {
+                    visibility:[0,1],
+                    type: "seek",
+                    frames: [0, 211],
+                },
+            ]
+        });
     </script>
 </body>
 </html>

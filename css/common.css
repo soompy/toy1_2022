@@ -8,8 +8,8 @@
   --paleSpringBud: #dedaba;
   --goldCrayola: #e5c687;
   --richBlackForeground: #0f1a20;
-  --white: #f8f8f8;
-  --black: #222;
+  --white: #ffffff;
+  --black: #1a1a1a;
   --msuGreen: #2d4739;
   --gray: #eee;
 }
@@ -22,6 +22,7 @@
   --navLinkHoverBg: var(--paleSpringBud);
   --mainBg: var(--goldCrayola);
   --fontColor: var(--black);
+  --normalBg: var(--white);
 }
 
 .darkTheme {
@@ -32,6 +33,7 @@
   --navLinkHoverBg: var(--msuGreen);
   --mainBg: var(--msuGreen);
   --fontColor: var(--white);
+  --normalBg: var(--black);
 }
 
 body {
@@ -64,6 +66,12 @@ img {
   width: 100%;
 }
 
+.area-common {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
 #header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,10 +79,14 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   width: 100%;
   height: 80px;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid var(--fontColor);
+  background: var(--normalBg);
 }
 
 #header .inner {
