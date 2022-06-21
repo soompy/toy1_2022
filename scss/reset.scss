@@ -5,6 +5,9 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+* {
+  box-sizing: border-box;
+}
 
 html {
   font-family: sans-serif; /* 1 */
@@ -198,6 +201,7 @@ sub {
    */
 
 img {
+  display: block;
   border: 0;
 }
 

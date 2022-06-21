@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 </head>
 <body class="">
-    <header id="header">
+    <header id="header" style="display: none;">
         <div class="inner">
             <h1 class="logo">
                 <a href="">
@@ -74,7 +74,7 @@
 
 
     <main id="container">
-        <section class="section visual">
+        <section id="visual" class="section" style="display: none;">
             <div class="cursor"></div>
             <div class="shapes">
                 <div class="shape shape-1"></div>
@@ -96,13 +96,12 @@
             <div class="card-item card-1"
                 data-aos="fade-up"
                 data-aos-offset="200"
-                data-aos-delay="50"
+                data-aos-delay="20"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out"
                 data-aos-mirror="true"
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
-                style="height: 50vh;"
             >
                 <div class="top-bg"></div>
                 <div class="bottom-bg"></div>
@@ -111,9 +110,8 @@
                 </div>
             </div>
 
-            <div class="card-item card-2" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
-                data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center"
-                style="height: 50vh;">
+            <div class="card-item card-2" data-aos="fade-down" data-aos-offset="200" data-aos-delay="20" data-aos-duration="1000"
+                data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
                 <div class="top-bg"></div>
                 <div class="bottom-bg"></div>
                 <div class="card-content">
@@ -121,9 +119,8 @@
                 </div>
             </div>
 
-            <div class="card-item card-3" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
-                data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center"
-                style="height: 50vh;">
+            <div class="card-item card-3" data-aos="fade-up" data-aos-offset="200" data-aos-delay="20" data-aos-duration="1000"
+                data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
                 <div class="top-bg"></div>
                 <div class="bottom-bg"></div>
                 <div class="card-content">
@@ -143,7 +140,6 @@
         </section>
 
         <section class="section area-common text-roll-area">
-            
             <span class="image-wrapper ai-lottie">
                 <lottie-player src="https://assets7.lottiefiles.com/private_files/lf30_cmd8kh2q.json" mode="bounce" background="transparent"  speed="1.5"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
             </span>
@@ -179,6 +175,12 @@
             </div>
             <div class="band-wrap">
                 <div class="band-box band-box-4"></div>
+            </div>
+
+            <div class="bounce-object-wrap">
+                <div class="object obj-1"><img src="" alt=""></div>
+                <div class="object obj-2"><img src="" alt=""></div>
+                <div class="object obj-3"><img src="" alt=""></div>
             </div>
         </section>
 
@@ -295,7 +297,13 @@
             </div>
         </section>
 
-        <div class="floating-object"></div>
+        <div class="floating-object" 
+            data-aos="fade-left"
+            data-aos-anchor="#visual"
+            data-aos-anchor-placement="top-center">
+            RIGHT
+            <span>when top of <strong>5</strong> hits center of window</span>
+        </div>
         
     </main>
 

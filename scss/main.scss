@@ -5,7 +5,7 @@
   accent-color: rgb(255, 255, 128);
 }
 
-.visual {
+#visual {
   overflow: hidden;
   position: relative;
   font-family: Montserrat, sans-serif;
@@ -771,6 +771,9 @@
 
 // 카드
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .card-item {
     overflow: hidden;
     position: relative;
@@ -846,7 +849,7 @@
       width: calc(100% - 10px);
       height: calc(100% - 10px);
       border-radius: 30px;
-      border: 5px solid #333;
+      border: 5px solid var(--fontColor);
       z-index: 10;
     }
     .card-content {
@@ -860,10 +863,20 @@
       border-radius: 30px;
       z-index: 5;
     }
+    &:nth-child(even) {
+      margin: 0 30px;
+    }
+    &:last-child {
+      margin: 0;
+    }
   }
 }
 
 // 네온타이틀
+.neon {
+  height: inherit;
+  padding: 0;
+}
 .neon-wrap {
   position: relative;
   background-color: #000;
@@ -896,6 +909,9 @@
     }
     .red-neon {
       font-size: 160px;
+      font-family: Montserrat, sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
       padding-top: 20px;
       text-align: center;
       color: rgba(255, 232, 50, 0.9);
@@ -927,6 +943,8 @@
 
 // 롤링텍스트 배경
 .text-roll-area {
+  overflow: hidden;
+  position: relative;
   .ai-lottie {
     position: absolute;
     left: 50%;
@@ -987,6 +1005,47 @@
       animation: 33s linear 0s infinite normal none running rollingleft2;
     }
   }
+  .bounce-object-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    .object {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-direction: alternate;
+      transition: all 0.5s ease-in-out;
+      &.obj-1 {
+        left: 10%;
+        top: 10%;
+        animation-name: aniFloat;
+        animation-duration: 2s;
+        animation-delay: 1s;
+      }
+      &.obj-2 {
+        left: 50%;
+        top: 80%;
+        animation-name: aniFloat;
+        animation-duration: 2s;
+        animation-delay: 1s;
+      }
+      &.obj-3 {
+        left: 90%;
+        top: 30%;
+        animation-name: aniFloat;
+        animation-duration: 2s;
+        animation-delay: 1s;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
 }
 
 @keyframes rollingleft1 {
@@ -1012,6 +1071,31 @@
     transform: translateX(-200%);
   }
 }
+
+@keyframes aniFloat {
+  0% {
+    margin-top: -20px;
+  }
+  50% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 20px;
+  }
+}
+
+@keyframes aniRotate {
+  0% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 .band-wrap {
   .band-box {
@@ -1053,8 +1137,10 @@
 }
 
 .tech-area {
+  position: relative;
   display: flex;
   align-items: center;
+  background: url("https://images.unsplash.com/photo-1612742491367-04acdf256856?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1942&q=80") center center no-repeat;
   .stack-obj {
   }
   .stroke-text-box {
@@ -1076,6 +1162,20 @@
     );
     background-size: 0% 100%;
     animation: changeBgz 1s linear infinite;
+  }
+  &:after {
+    display: block;
+    clear: both;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 }
 

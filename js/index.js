@@ -90,7 +90,7 @@ function createSection1PinTimeline() {
   return gsap.timeline({
     scrollTrigger: {
       id: "floating-object",
-      trigger: ".visual",
+      trigger: "#visual",
       start: "top top",
       end: "bottom top",
       scrub: true,
