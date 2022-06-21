@@ -12,6 +12,7 @@
   --black: #1a1a1a;
   --msuGreen: #2d4739;
   --gray: #eee;
+  --space: #827452;
 }
 
 * {
@@ -23,6 +24,7 @@
   --mainBg: var(--goldCrayola);
   --fontColor: var(--black);
   --normalBg: var(--white);
+  --spaceBG: var(--space);
 }
 
 .darkTheme {
@@ -34,6 +36,7 @@
   --mainBg: var(--msuGreen);
   --fontColor: var(--white);
   --normalBg: var(--black);
+  --spaceBG: var(--black);
 }
 
 body {

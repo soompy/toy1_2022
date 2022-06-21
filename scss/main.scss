@@ -1029,7 +1029,7 @@
       &.obj-2 {
         left: 50%;
         top: 80%;
-        animation-name: aniFloat;
+        animation-name: aniFloat aniRotate;
         animation-duration: 2s;
         animation-delay: 1s;
       }
@@ -1045,6 +1045,14 @@
         height: auto;
       }
     }
+  }
+  .space-effect {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--spaceBG);
   }
 }
 

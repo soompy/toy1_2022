@@ -120,3 +120,87 @@ function createFloatingObjectTimeline() {
 }
 
 
+// space effect
+const canvas = document.querySelector('.space-effect');
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+const ctx = canvas.getContext('2d');
+ctx.strokeStyle = '#fff';
+
+class Line {
+  #startTime;
+  #duration;
+  #startX;
+  #startY;
+  constructor(){
+    this.#generate();
+  }
+
+  #generate(){
+
+    this.#startTime = Date.now();
+    this.#duration = Math.random() * 1e3;
+
+    const side = Math.floor(Math.random() * 4);
+    // 0 - top
+    // 1 - bottom
+    // 2 - left
+    // 3 - right
+
+    if(side < 2){
+      this.#startX = Math.floor(Math.random() * (canvas.width - 1));
+      this.#startY = side == 0 ? 0 : canvas.height;
+    }else{
+      this.#startX = side == 2 ? 0 : canvas.width;
+      this.#startY = Math.floor(Math.random() * (canvas.height - 1));
+    }
+  }
+
+  render(){
+    if(Date.now() - this.#startTime >= this.#duration) this.#generate();
+      
+    ctx.beginPath();
+
+    var { x, y } = this.#getPoint();
+    ctx.moveTo(x, y);
+
+    var { x, y } = this.#getPoint(100);
+    ctx.lineTo(x, y);
+
+    ctx.stroke();
+
+  }
+
+  #getPoint(offset = 0){
+
+    var endX = canvas.width / 2;
+    var endY = canvas.height / 2;
+
+    endX -= this.#startX;
+    endY -= this.#startY;
+
+    var time = Date.now() - offset - this.#startTime;
+
+    var x = time * endX / this.#duration;
+    var y = time * endY / this.#duration;
+
+    x += this.#startX;
+    y += this.#startY;
+
+    return { x, y };
+
+  }
+
+}
+
+const lines = Array(100).fill(0).map(()=>new Line());
+
+(function update(){
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for(line of lines) line.render();
+
+  requestAnimationFrame(update);
+
+})();

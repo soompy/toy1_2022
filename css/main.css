@@ -524,8 +524,8 @@
 .text-roll-area .bounce-object-wrap .object.obj-2 {
   left: 50%;
   top: 80%;
-  -webkit-animation-name: aniFloat;
-          animation-name: aniFloat;
+  -webkit-animation-name: aniFloat aniRotate;
+          animation-name: aniFloat aniRotate;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-delay: 1s;
@@ -546,6 +546,15 @@
 .text-roll-area .bounce-object-wrap .object img {
   width: 100%;
   height: auto;
+}
+
+.text-roll-area .space-effect {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--spaceBG);
 }
 
 @-webkit-keyframes rollingleft1 {
