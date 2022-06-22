@@ -1,0 +1,64 @@
+:root {
+  --navHeight: 70px;
+  --sage: #d2cca1;
+  --paleSpringBud: #dedaba;
+  --goldCrayola: #e5c687;
+  --richBlackForeground: #0f1a20;
+  --white: #ffffff;
+  --black: #1a1a1a;
+  --msuGreen: #2d4739;
+  --gray: #eee;
+  --space: #827452;
+  --neonYellow: #E0E722;
+}
+
+* {
+  --themeDropDownBg: var(--goldCrayola);
+  --themeIconBorderColor: var(--sage);
+  --themeSwitchColor: var(--sage);
+  --navBg: var(--sage);
+  --navLinkHoverBg: var(--paleSpringBud);
+  --mainBg: var(--goldCrayola);
+  --fontColor: var(--black);
+  --normalBg: var(--white);
+  --spaceBG: var(--space);
+  --neonLight: var(--neonYellow);
+}
+
+.darkMode {
+  --themeDropDownBg: var(--msuGreen);
+  --themeIconBorderColor: var(--richBlackForeground);
+  --themeSwitchColor: var(--msuGreen);
+  --navBg: var(--richBlackForeground);
+  --navLinkHoverBg: var(--msuGreen);
+  --mainBg: var(--msuGreen);
+  --fontColor: var(--white);
+  --normalBg: var(--black);
+  --spaceBG: var(--black);
+  --neonLight: var(--white);
+}
+
+body {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+body.darkMode {
+  background: #1a1a1a;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body.darkMode a {
+  color: #ffffff;
+}
+
+body.darkMode #header .logo a svg path {
+  fill: #ffffff;
+}
+
+body.darkMode .themeSwitch div {
+  background: #eee;
+}

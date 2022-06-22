@@ -2,7 +2,7 @@
 const themeSwitch = document.querySelector('.themeSwitch input');
 
 themeSwitch.addEventListener('change', () => {
-  document.body.classList.toggle('darkTheme');
+  document.body.classList.toggle('darkMode');
 });
 
 

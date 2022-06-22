@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CJ AI 센터 정적반응형 페이지 커리어</title>   
     <link rel="stylesheet" href="./css/common.css"> 
-    <link rel="stylesheet" href="./css/main.css"> 
+    <link rel="stylesheet" href="./css/sub.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <meta name="description" content="패럴렉스 스크롤, 네온효과, css 애니메이션, 다크모드 지원이 들어간 토이 프로젝트입니다.">
@@ -83,24 +83,26 @@
 
 
     <main id="container">
-        <section id="visual" class="section" style="display: none;">
-            <div class="cursor"></div>
-            <div class="shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-            <div class="star-wrap">
-                <div class="stars-1"></div>
-                <div class="stars-2"></div>
-                <div class="stars-3"></div>
-            </div>
-            <div class="visual-text">
-                <h1>Hello there!</h1>
+        <section id="subVisual" class="section">
+            <div class="inner">
+                <p class="glow">text</p>
             </div>
         </section>
 
         
+        <section class="section area-common">
+            <div class="inner">
+                <span class="circle-line-arrow">
+                    <i class="icon ic_arrow_right black wh-20"></i>
+                    <svg>
+                        <use xlink:href="#circle">
+                    </svg>
+                </span>
+            </div>
+        </section>
+
+        <section class="section area-common"></section>
+
         <section class="section area-common"></section>
 
         <div class="floating-object" 

@@ -1,1 +1,173 @@
-/* No CSS */
+.subVisual {
+  overflow: hidden;
+  position: relative;
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+}
+
+.circle-line-arrow {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.circle-line-arrow::before, .circle-line-arrow::after {
+  display: block;
+  clear: both;
+  content: '';
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 50%;
+  border: 2px solid var(--fontColor);
+}
+
+.circle-line-arrow svg {
+  display: block;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  color: var(--fontColor);
+  stroke-width: 2px;
+  stroke-dashoffset: 126;
+  stroke-dasharray: 126 126 0;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.circle-line-arrow.animate svg {
+  -webkit-animation: stroke 1s ease forwards .3s;
+          animation: stroke 1s ease forwards .3s;
+}
+
+.circle-line-arrow.animate i {
+  -webkit-animation: arrow 1.6s ease forwards;
+          animation: arrow 1.6s ease forwards;
+}
+
+@-webkit-keyframes stroke {
+  52% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    stroke-dashoffset: 0;
+  }
+  52.1% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    stroke-dashoffset: 0;
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    stroke-dashoffset: 126;
+  }
+}
+
+@keyframes stroke {
+  52% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    stroke-dashoffset: 0;
+  }
+  52.1% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    stroke-dashoffset: 0;
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    stroke-dashoffset: 126;
+  }
+}
+
+@-webkit-keyframes arrow {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  23% {
+    -webkit-transform: translateX(17px);
+            transform: translateX(17px);
+    opacity: 1;
+  }
+  24%,
+  80% {
+    -webkit-transform: translateX(-22px);
+            transform: translateX(-22px);
+    opacity: 0;
+  }
+  81% {
+    opacity: 1;
+    -webkit-transform: translateX(-22px);
+            transform: translateX(-22px);
+  }
+}
+
+@keyframes arrow {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  23% {
+    -webkit-transform: translateX(17px);
+            transform: translateX(17px);
+    opacity: 1;
+  }
+  24%,
+  80% {
+    -webkit-transform: translateX(-22px);
+            transform: translateX(-22px);
+    opacity: 0;
+  }
+  81% {
+    opacity: 1;
+    -webkit-transform: translateX(-22px);
+            transform: translateX(-22px);
+  }
+}
+
+.glow {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--neonLight);
+  cursor: pointer;
+}
+
+.glow:hover {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+          animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  0% {
+    text-shadow: 0 0 5px var(--neonLight), 0 0 10px var(--neonLight), 0 0 20px var(--neonLight), 0 0 7px #1abc9c, 0 0 12px #1abc9c, 0 0 15px #1abc9c, 0 0 60px #16a085, 0 0 80px #16a085, 0 0 90px #16a085, 0 0 110px #218c74, 0 0 160px #218c74;
+  }
+  100% {
+    text-shadow: 0 0 5px var(--neonLight), 0 0 10px var(--neonLight), 0 0 15px var(--neonLight), 0 0 7px #1abc9c, 0 0 12px #1abc9c, 0 0 15px #1abc9c, 0 0 30px #16a085, 0 0 45px #16a085, 0 0 50px #16a085, 0 0 60px #218c74, 0 0 85px #218c74;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px var(--neonLight), 0 0 10px var(--neonLight), 0 0 20px var(--neonLight), 0 0 7px #1abc9c, 0 0 12px #1abc9c, 0 0 15px #1abc9c, 0 0 60px #16a085, 0 0 80px #16a085, 0 0 90px #16a085, 0 0 110px #218c74, 0 0 160px #218c74;
+  }
+  100% {
+    text-shadow: 0 0 5px var(--neonLight), 0 0 10px var(--neonLight), 0 0 15px var(--neonLight), 0 0 7px #1abc9c, 0 0 12px #1abc9c, 0 0 15px #1abc9c, 0 0 30px #16a085, 0 0 45px #16a085, 0 0 50px #16a085, 0 0 60px #218c74, 0 0 85px #218c74;
+  }
+}
