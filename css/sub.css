@@ -5,138 +5,110 @@
   font-weight: 900;
 }
 
-.circle-line-arrow {
-  overflow: hidden;
-  position: relative;
-  display: block;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
+nav {
+  --time-slot-length: 0.1s;
+  --t1x: var(--time-slot-length);
+  --t2x: calc(var(--time-slot-length) * 2);
+  --t3x: calc(var(--time-slot-length) * 3);
+  --t4x: calc(var(--time-slot-length) * 4);
+  --color: dodgerblue;
 }
 
-.circle-line-arrow::before, .circle-line-arrow::after {
-  display: block;
-  clear: both;
+nav ul {
+  padding: 0;
+}
+
+nav ul li {
+  color: white;
+  list-style-type: none;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  width: 8em;
+  height: 3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  letter-spacing: 0.1em;
+  position: relative;
+  -webkit-transition: var(--t4x);
+  transition: var(--t4x);
+  /* duration 4x */
+  margin: 1em;
+}
+
+nav ul li:before, nav ul li:after {
   content: '';
   position: absolute;
-  left: 1px;
-  right: 1px;
-  top: 1px;
-  bottom: 1px;
-  border-radius: 50%;
-  border: 2px solid var(--fontColor);
+  width: 0;
+  height: 0;
+  border-radius: inherit;
+  visibility: hidden;
 }
 
-.circle-line-arrow svg {
-  display: block;
-  width: 44px;
-  height: 44px;
-  position: relative;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  color: var(--fontColor);
-  stroke-width: 2px;
-  stroke-dashoffset: 126;
-  stroke-dasharray: 126 126 0;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
+nav ul li:before {
+  top: -1px;
+  left: -1px;
+  border: 1px solid;
+  border-color: var(--color) var(--color) transparent transparent;
+  -webkit-transition: height linear var(--t1x) var(--t2x), width linear var(--t1x) var(--t3x), visibility 0s var(--t4x);
+  transition: height linear var(--t1x) var(--t2x), width linear var(--t1x) var(--t3x), visibility 0s var(--t4x);
+  /* delay 4x */
 }
 
-.circle-line-arrow.animate svg {
-  -webkit-animation: stroke 1s ease forwards .3s;
-          animation: stroke 1s ease forwards .3s;
+nav ul li:after {
+  bottom: -1px;
+  right: -1px;
+  border: 1px solid;
+  border-color: transparent transparent var(--color) var(--color);
+  -webkit-transition: height linear var(--t1x), width linear var(--t1x) var(--t1x), visibility 0s var(--t2x);
+  transition: height linear var(--t1x), width linear var(--t1x) var(--t1x), visibility 0s var(--t2x);
+  /* delay 2x */
 }
 
-.circle-line-arrow.animate i {
-  -webkit-animation: arrow 1.6s ease forwards;
-          animation: arrow 1.6s ease forwards;
+nav ul li:hover {
+  color: var(--color);
+  -webkit-animation: pulse ease-out 1s var(--t4x);
+          animation: pulse ease-out 1s var(--t4x);
 }
 
-@-webkit-keyframes stroke {
-  52% {
-    -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-    stroke-dashoffset: 0;
-  }
-  52.1% {
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg);
-    stroke-dashoffset: 0;
-  }
-  100% {
-    -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-    stroke-dashoffset: 126;
-  }
+nav ul li:hover:before, nav ul li:hover:after {
+  width: 100%;
+  height: 100%;
+  visibility: visible;
 }
 
-@keyframes stroke {
-  52% {
-    -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-    stroke-dashoffset: 0;
+nav ul li:hover:before {
+  -webkit-transition: visibility 0s, width linear var(--t1x), height linear var(--t1x) var(--t1x);
+  transition: visibility 0s, width linear var(--t1x), height linear var(--t1x) var(--t1x);
+}
+
+nav ul li:hover:after {
+  -webkit-transition: visibility 0s var(--t2x), width linear var(--t1x) var(--t2x), height linear var(--t1x) var(--t3x);
+  transition: visibility 0s var(--t2x), width linear var(--t1x) var(--t2x), height linear var(--t1x) var(--t3x);
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-box-shadow: 0 0 rgba(31, 143, 255, 0.5);
+            box-shadow: 0 0 rgba(31, 143, 255, 0.5);
   }
-  52.1% {
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg);
-    stroke-dashoffset: 0;
-  }
-  100% {
-    -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-    stroke-dashoffset: 126;
+  to {
+    -webkit-box-shadow: 0 0 0 1em rgba(31, 143, 255, 0);
+            box-shadow: 0 0 0 1em rgba(31, 143, 255, 0);
   }
 }
 
-@-webkit-keyframes arrow {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
+@keyframes pulse {
+  from {
+    -webkit-box-shadow: 0 0 rgba(31, 143, 255, 0.5);
+            box-shadow: 0 0 rgba(31, 143, 255, 0.5);
   }
-  23% {
-    -webkit-transform: translateX(17px);
-            transform: translateX(17px);
-    opacity: 1;
-  }
-  24%,
-  80% {
-    -webkit-transform: translateX(-22px);
-            transform: translateX(-22px);
-    opacity: 0;
-  }
-  81% {
-    opacity: 1;
-    -webkit-transform: translateX(-22px);
-            transform: translateX(-22px);
-  }
-}
-
-@keyframes arrow {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-  23% {
-    -webkit-transform: translateX(17px);
-            transform: translateX(17px);
-    opacity: 1;
-  }
-  24%,
-  80% {
-    -webkit-transform: translateX(-22px);
-            transform: translateX(-22px);
-    opacity: 0;
-  }
-  81% {
-    opacity: 1;
-    -webkit-transform: translateX(-22px);
-            transform: translateX(-22px);
+  to {
+    -webkit-box-shadow: 0 0 0 1em rgba(31, 143, 255, 0);
+            box-shadow: 0 0 0 1em rgba(31, 143, 255, 0);
   }
 }
 

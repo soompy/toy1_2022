@@ -83,7 +83,7 @@
 
 
     <main id="container">
-        <section id="subVisual" class="section">
+        <section id="subVisual" class="section" style="display: none;">
             <div class="inner">
                 <p class="glow">text</p>
             </div>
@@ -92,12 +92,14 @@
         
         <section class="section area-common">
             <div class="inner">
-                <span class="circle-line-arrow">
-                    <i class="icon ic_arrow_right black wh-20"></i>
-                    <svg>
-                        <use xlink:href="#circle">
-                    </svg>
-                </span>
+                <nav>
+                    <ul>
+                      <li>Home</li>
+                      <li>Products</li>
+                      <li>Services</li>
+                      <li>Contact</li>
+                    </ul>
+                  </nav>
             </div>
         </section>
 
@@ -147,6 +149,10 @@
                 },
             ]
         });
+
+        $('.arrow').on('click touch', function(e) {
+
+
     </script>
 </body>
 </html>
