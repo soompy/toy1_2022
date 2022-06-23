@@ -11,6 +11,7 @@
         ic_arrow_down: "%0A%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00028 5.35665L1.37199 0.728362L0.343518 1.75684L6.00037 7.41369L7.02885 6.38522L11.6572 1.75679L10.6287 0.728272L6.00028 5.35665Z' fill='%23999999'/%3E%3C/svg%3E%0A",
         ic_direction: "%0A%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.3734 9.83656L8.29139 9.59526L8.04795 9.51985L2.4454 7.78435L16.0599 1.94708L10.3293 15.5914L8.3734 9.83656Z' stroke='%23#{$color}'/%3E%3C/svg%3E%0A",
         ic_gps: "%0A%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9' r='8.5' stroke='%23#{$color}'/%3E%3Crect x='13.5' y='8.5' width='4' height='1' fill='%23#{$color}'/%3E%3Crect x='0.5' y='8.5' width='4' height='1' fill='%23#{$color}'/%3E%3Crect x='8.5' y='4.5' width='4' height='1' transform='rotate(-90 8.5 4.5)' fill='%23#{$color}'/%3E%3Crect x='8.5' y='17.5' width='4' height='1' transform='rotate(-90 8.5 17.5)' fill='%23#{$color}'/%3E%3C/svg%3E%0A",
+        ic_chatting: "%0A%3Csvg width='24' height='21' viewBox='0 0 24 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.9805 1.12012C6.18069 1.12012 1.48047 4.80868 1.48047 9.35856C1.48047 12.0605 3.13843 14.4583 5.69871 15.9607C6.06852 16.1749 5.95634 16.597 5.95634 16.597C5.95634 16.597 5.64941 18.1919 5.46697 19.1846C5.34986 19.8257 5.50395 20.1201 5.82075 20.1201C5.99332 20.1201 6.21521 20.0325 6.46791 19.8646C7.1804 19.3902 9.83067 17.6785 9.83067 17.6785C9.83067 17.6785 10.076 17.507 10.463 17.507C10.5099 17.507 10.5592 17.5094 10.611 17.5155C11.019 17.5508 11.6045 17.5958 11.9805 17.5958C17.779 17.5958 22.4805 13.9084 22.4805 9.35856C22.4805 4.80868 17.779 1.12012 11.9805 1.12012' stroke='23#{$color}' stroke-width='1.5'/%3E%3C/svg%3E%0A",
     );
   $icon: map-get($iconList, $iconName);
   @return url("data:image/svg+xml;charset=utf8,#{$icon}");
@@ -84,6 +85,12 @@
         background-image: icon(ic_gps);
         &.black {
             background-image: icon(ic_gps, '000000');
+        }
+    }
+    &.ic_chatting {
+        background-image: icon(ic_chatting);
+        &.white {
+            background-image: icon(ic_chatting, 'ffffff');
         }
     }
 }

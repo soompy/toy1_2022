@@ -1,8 +1,29 @@
-.subVisual {
+@import url(../css/common.css);
+@import url(../css/darkMode.css);
+
+#subVisual {
     overflow: hidden;
     position: relative;
+    width: 100%;
+    height: 100vh;
     font-family: Montserrat, sans-serif;
     font-weight: 900;
+    .inner {
+        height: 100%;
+        svg {
+            height: 100%;
+        }
+    }
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 40%;
+        max-width: 200px;
+        max-height: 40%;
+    }
 }
 
 nav {
@@ -12,6 +33,9 @@ nav {
     --t3x: calc(var(--time-slot-length) * 3);
     --t4x: calc(var(--time-slot-length) * 4);
     --color: dodgerblue;
+    &.career-intro {
+        background: var(--fontColor);
+    }
     ul {
         padding: 0;
         li {
