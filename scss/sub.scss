@@ -14,7 +14,7 @@
             height: 100%;
         }
     }
-    .logo {
+    .point {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -26,82 +26,77 @@
     }
 }
 
-nav {
+.career-intro {
     --time-slot-length: 0.1s;
     --t1x: var(--time-slot-length);
     --t2x: calc(var(--time-slot-length) * 2);
     --t3x: calc(var(--time-slot-length) * 3);
     --t4x: calc(var(--time-slot-length) * 4);
     --color: dodgerblue;
-    &.career-intro {
-        background: var(--fontColor);
-    }
-    ul {
-        padding: 0;
-        li {
-            color: white;
-            list-style-type: none;
-            font-family: sans-serif;
-            text-transform: uppercase;
-            width: 8em;
-            height: 3em;
-            box-sizing: border-box;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 0.1em;
-            text-align: center;
-            line-height: 3em;
-            letter-spacing: 0.1em;
-            position: relative;
-            transition: var(--t4x); /* duration 4x */
-            margin: 1em;
+    background: var(--fontColor);
+    button {
+        color: white;
+        list-style-type: none;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        width: 8em;
+        height: 3em;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 0.1em;
+        text-align: center;
+        line-height: 3em;
+        letter-spacing: 0.1em;
+        position: relative;
+        transition: var(--t4x); /* duration 4x */
+        margin: 1em;
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-radius: inherit;
+            visibility: hidden;
+        }
+        &:before {
+            top: -1px;
+            left: -1px;
+            border: 1px solid;
+            border-color: var(--color) var(--color) transparent transparent;
+            transition:
+                height linear var(--t1x) var(--t2x), /* delay 2x */
+                width linear var(--t1x) var(--t3x), /* delay 3x */
+                visibility 0s var(--t4x); /* delay 4x */
+        }
+        &:after {
+            bottom: -1px;
+            right: -1px;
+            border: 1px solid;
+            border-color: transparent transparent var(--color) var(--color);
+            transition:
+                height linear var(--t1x),
+                width linear var(--t1x) var(--t1x), /* delay 1x */
+                visibility 0s var(--t2x);  /* delay 2x */
+        }
+        &:hover {
+            color: var(--color);
+            animation: pulse ease-out 1s var(--t4x);
             &:before, &:after {
-                content: '';
-                position: absolute;
-                width: 0;
-                height: 0;
-                border-radius: inherit;
-                visibility: hidden;
+                width: 100%;
+                height: 100%;
+                visibility: visible;
             }
             &:before {
-                top: -1px;
-                left: -1px;
-                border: 1px solid;
-                border-color: var(--color) var(--color) transparent transparent;
                 transition:
-                    height linear var(--t1x) var(--t2x), /* delay 2x */
-                    width linear var(--t1x) var(--t3x), /* delay 3x */
-                    visibility 0s var(--t4x); /* delay 4x */
+                visibility 0s,
+                width linear var(--t1x),
+                height linear var(--t1x) var(--t1x);
             }
             &:after {
-                bottom: -1px;
-                right: -1px;
-                border: 1px solid;
-                border-color: transparent transparent var(--color) var(--color);
-                transition:
-                    height linear var(--t1x),
-                    width linear var(--t1x) var(--t1x), /* delay 1x */
-                    visibility 0s var(--t2x);  /* delay 2x */
-            }
-            &:hover {
-                color: var(--color);
-                animation: pulse ease-out 1s var(--t4x);
-                &:before, &:after {
-                    width: 100%;
-                    height: 100%;
-                    visibility: visible;
-                }
-                &:before {
-                    transition:
-                    visibility 0s,
-                    width linear var(--t1x),
-                    height linear var(--t1x) var(--t1x);
-                }
-                &:after {
-                    transition: 
-                    visibility 0s var(--t2x), /* delay 2x */
-                    width linear var(--t1x) var(--t2x), /* delay 2x */
-                    height linear var(--t1x) var(--t3x);
-                }
+                transition: 
+                visibility 0s var(--t2x), /* delay 2x */
+                width linear var(--t1x) var(--t2x), /* delay 2x */
+                height linear var(--t1x) var(--t3x);
             }
         }
     }

@@ -17,7 +17,7 @@
   height: 100%;
 }
 
-#subVisual .logo {
+#subVisual .point {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -29,24 +29,17 @@
   max-height: 40%;
 }
 
-nav {
+.career-intro {
   --time-slot-length: 0.1s;
   --t1x: var(--time-slot-length);
   --t2x: calc(var(--time-slot-length) * 2);
   --t3x: calc(var(--time-slot-length) * 3);
   --t4x: calc(var(--time-slot-length) * 4);
   --color: dodgerblue;
-}
-
-nav.career-intro {
   background: var(--fontColor);
 }
 
-nav ul {
-  padding: 0;
-}
-
-nav ul li {
+.career-intro button {
   color: white;
   list-style-type: none;
   font-family: sans-serif;
@@ -67,7 +60,7 @@ nav ul li {
   margin: 1em;
 }
 
-nav ul li:before, nav ul li:after {
+.career-intro button:before, .career-intro button:after {
   content: '';
   position: absolute;
   width: 0;
@@ -76,7 +69,7 @@ nav ul li:before, nav ul li:after {
   visibility: hidden;
 }
 
-nav ul li:before {
+.career-intro button:before {
   top: -1px;
   left: -1px;
   border: 1px solid;
@@ -86,7 +79,7 @@ nav ul li:before {
   /* delay 4x */
 }
 
-nav ul li:after {
+.career-intro button:after {
   bottom: -1px;
   right: -1px;
   border: 1px solid;
@@ -96,24 +89,24 @@ nav ul li:after {
   /* delay 2x */
 }
 
-nav ul li:hover {
+.career-intro button:hover {
   color: var(--color);
   -webkit-animation: pulse ease-out 1s var(--t4x);
           animation: pulse ease-out 1s var(--t4x);
 }
 
-nav ul li:hover:before, nav ul li:hover:after {
+.career-intro button:hover:before, .career-intro button:hover:after {
   width: 100%;
   height: 100%;
   visibility: visible;
 }
 
-nav ul li:hover:before {
+.career-intro button:hover:before {
   -webkit-transition: visibility 0s, width linear var(--t1x), height linear var(--t1x) var(--t1x);
   transition: visibility 0s, width linear var(--t1x), height linear var(--t1x) var(--t1x);
 }
 
-nav ul li:hover:after {
+.career-intro button:hover:after {
   -webkit-transition: visibility 0s var(--t2x), width linear var(--t1x) var(--t2x), height linear var(--t1x) var(--t3x);
   transition: visibility 0s var(--t2x), width linear var(--t1x) var(--t2x), height linear var(--t1x) var(--t3x);
 }

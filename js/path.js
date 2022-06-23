@@ -1,3 +1,4 @@
+// 비주얼 wave 효과
 const wave = document.querySelector('#wave')
 const logo = document.querySelector('.logo')
 
